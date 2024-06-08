@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.ind.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.ind.grpc";
+
+message User {
+  int32 id = 1;
+  string name = 2;
+}
+
+message GetUserRequest {
+  int32 id = 1;
+}
+service UserService{
+  rpc getUser(GetUserRequest) returns(User){}
+}
+
+
